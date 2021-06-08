@@ -2,8 +2,9 @@ package com.example.mvvmrecipeapp.domain.util
 
 interface DomainMapper<T, DomainModel> {
 // T --> mean like Entity
-    fun mapFromDomainModel(model: T): DomainModel
-    fun mapToDomainModel(domainModel: DomainModel): T   // we use it we want post data for example in Retrofit,publish for network
+
+    fun mapToDomainModel(model: T): DomainModel
+    fun mapFromDomainModel(domainModel: DomainModel): T   // we use it we want post data for example in Retrofit,publish for network
 }
 
 /*
