@@ -1,9 +1,9 @@
 package com.example.mvvmrecipeapp.domain.util
 
-interface EntityMapper<Entity, DomainModel> {
-
-    fun mapFromEntity(entity: Entity): DomainModel
-    fun mapToEntity(domainModel: DomainModel): Entity   // we use it we want post data for example in Retrofit,publish for network
+interface DomainMapper<T, DomainModel> {
+// T --> mean like Entity
+    fun mapFromDomainModel(model: T): DomainModel
+    fun mapToDomainModel(domainModel: DomainModel): T   // we use it we want post data for example in Retrofit,publish for network
 }
 
 /*
@@ -36,3 +36,6 @@ It's also a part of the Domain Driven Design concept to have "bounded co texts" 
 
 
  */
+
+// Setup Cache Layer
+// Setup persistance Layer

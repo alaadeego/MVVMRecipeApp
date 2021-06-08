@@ -3,18 +3,9 @@ package com.example.mvvmrecipeapp
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.fragment.app.FragmentManager
 import com.example.mvvmrecipeapp.domain.model.Recipe
-import com.example.mvvmrecipeapp.network.model.RecipeNetworkEntity
-import com.example.mvvmrecipeapp.network.model.RecipeNetworkMapper
-import com.example.mvvmrecipeapp.ui.theme.MVVMRecipeAppTheme
+import com.example.mvvmrecipeapp.network.model.RecipeDto
+import com.example.mvvmrecipeapp.network.model.RecipeDtoMapper
 
 class MainActivity : AppCompatActivity() {
     //: ComponentActivity()
@@ -27,9 +18,9 @@ class MainActivity : AppCompatActivity() {
               .commit()*/
 
 
-        val mapper = RecipeNetworkMapper()
+        val mapper = RecipeDtoMapper()
         val recipe = Recipe()
-        val networkEntity: RecipeNetworkEntity = mapper.mapToEntity(recipe)
+        val networkEntity: RecipeDto = mapper.mapToDomainModel(recipe)
     }
 }
 

@@ -2,7 +2,8 @@ package com.example.mvvmrecipeapp.network.model
 
 import com.google.gson.annotations.SerializedName
 
-class RecipeNetworkEntity(
+
+data class RecipeDto(
     @SerializedName("pk")
     var pk: Int? = null,
 
@@ -38,7 +39,7 @@ class RecipeNetworkEntity(
 
     )
 
-
+//this class  name was before RecipeNetworkEntity
 /*
 
 Network keyword refer to Network layer
@@ -54,6 +55,8 @@ Entity Keywork refer to this model from other layer
    Typically the fields will not be the same and
    you should keep the entity models separate from your core business model
 
+it's all about   scalability , testability , and for diff data structure in layers
+and for changing
 //-----------------
 
  MVI pattern kotlin & IR Compiler
