@@ -6,7 +6,6 @@ import com.example.mvvmrecipeapp.domain.util.DomainMapper
 class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
 
     override fun mapToDomainModel(model: RecipeDto): Recipe {
-
         return Recipe(
             id = model.pk,
             title = model.title,
@@ -40,11 +39,11 @@ class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
 
 
     fun toDomainList(initial: List<RecipeDto>): List<Recipe> {
-        return initial.map { mapFromDomainModel(it) }
+        return initial.map { mapToDomainModel(it) }
     }
 
     fun fromDomainList (initial: List<Recipe>): List<RecipeDto> {
-        return initial.map { mapToDomainModel(it) }
+        return initial.map { mapFromDomainModel(it) }
     }
 }
 
