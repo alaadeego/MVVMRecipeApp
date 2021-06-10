@@ -4,7 +4,8 @@ import com.example.mvvmrecipeapp.domain.model.Recipe
 import com.example.mvvmrecipeapp.domain.util.DomainMapper
 
 class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
-
+// mapper shouldn't be trivial(ساذج)
+    // 1 to 1 map , 1:1 mappingله
     override fun mapToDomainModel(model: RecipeDto): Recipe {
         return Recipe(
             id = model.pk,
@@ -20,6 +21,7 @@ class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
             dateUpdated = model.dateUpdated
         )
     }
+
 
     override fun mapFromDomainModel(domainModel: Recipe): RecipeDto {
         return RecipeDto(
