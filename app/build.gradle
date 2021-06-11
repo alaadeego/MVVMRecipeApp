@@ -42,7 +42,6 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.32'
     }
 }
 
@@ -70,6 +69,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
     def hilt_version = "2.33-beta"
-    implementation 'com.google.dagger:hilt-android:2.28-alpha'
-    kapt 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.2.0"
+
 }
